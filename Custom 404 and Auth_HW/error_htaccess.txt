@@ -1,0 +1,2 @@
+ErrorDocument 404 /nsw7227/235/error/error.html
+DirectoryIndex noterror.html

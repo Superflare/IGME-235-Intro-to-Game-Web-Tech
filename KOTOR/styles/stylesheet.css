@@ -1,0 +1,83 @@
+html {
+    background-color: black;
+}
+@font-face {
+    font-family: 'Old Republic';
+    src: url(../fonts/Old_R.ttf);
+    font-style: normal;
+}
+body{
+    width: 80%;
+    margin: 0 auto 5px;
+    background-color: #00291f;
+    border: 2px solid #b4751d;
+    border-top: 0;
+    font-family: Old Republic;
+}
+p, ul, blockquote, cite {
+    font-size: .7em;
+    color: rgb(255, 237, 199);
+}
+main {
+    padding: 0 15px 0 15px;
+}
+footer {
+    padding: 0 15px 30px 15px;
+}
+#malak_revan {
+    width: 100%;
+    align-content: center;
+}
+h1 {
+    text-align: center;
+    color: #fddb7f;
+}
+h2 {
+    color: #dda201;
+}
+.light {
+    color: rgb(0, 153, 255);
+}
+.dark {
+    color: rgb(218, 55, 55);
+}
+#publishing {
+    text-align: center;
+}
+#publishing ul{
+    list-style-position: inside;
+    padding: 0;
+}
+#screenshots {
+    text-align: center;
+}
+#screenshots img {
+    height: 250px;
+    width: 30%;
+    object-fit: cover;
+    padding: 0 10px 0 10px;
+}
+blockquote:before {
+    content: open-quote;
+    font-size: 3em;
+    line-height: 1em;
+}
+blockquote {
+    text-indent: -2.7em;
+}
+blockquote:after {
+    content: close-quote;
+    position: relative;
+    font-size: 3em;
+    line-height: 0;
+    right: -.3%;
+    top: 1em;
+}
+p a {
+    float: right;
+    padding-right: 8%;
+}
+a {
+    text-decoration: underline;
+    color: rgb(0, 153, 255);
+}
