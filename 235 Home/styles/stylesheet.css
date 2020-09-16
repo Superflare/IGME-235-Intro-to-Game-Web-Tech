@@ -1,0 +1,47 @@
+body {
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    background-color: lightblue;
+    justify-content: center;
+    align-items: center;
+    height: 30em;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    padding: 0 10em;
+}
+
+h2 {
+    border-bottom: 2px solid black;
+}
+
+#bio {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+#pic {
+    width: 300px;
+    height: 300px;
+    object-fit: none;
+    object-position: 36% 30%;
+    border-radius: 50%;
+    margin-right: 2em;
+}
+footer {
+    background-color: lightblue;
+    margin-top: 1em;
+    padding-top: 20px;
+}
+
+footer img {
+    width: 100px;
+}
