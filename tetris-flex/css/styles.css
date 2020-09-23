@@ -18,15 +18,21 @@ header, main, footer {
 }
 
 .tet {
-    display: flex;
-    flex-flow: column nowrap;
-    flex: 0 1 450px;
-    border: 1px solid black;
-    align-items: center;
+    flex: 0 1 200px;
+    /*border: 1px solid black;*/
+    text-align: center;
 }
 
 .tet img {
     width: 60%;
+}
+
+.long img {
+    width: 80%;
+}
+
+.square img {
+    width: 40%;
 }
 
 .name {
