@@ -1,0 +1,204 @@
+@font-face {
+    font-family: 'retro_computerregular';
+    src: url('../fonts/retro_computer_personal_use-webfont.woff2') format('woff2'),
+         url('../fonts/retro_computer_personal_use-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'dogicaregular';
+    src: url('../fonts/dogica-webfont.woff2') format('woff2'),
+         url('../fonts/dogica-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'dogicabold';
+    src: url('../fonts/dogicabold-webfont.woff2') format('woff2'),
+         url('../fonts/dogicabold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'dogica_pixelregular';
+    src: url('../fonts/dogicapixel-webfont.woff2') format('woff2'),
+         url('../fonts/dogicapixel-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'dogica_pixelbold';
+    src: url('../fonts/dogicapixelbold-webfont.woff2') format('woff2'),
+         url('../fonts/dogicapixelbold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    background-color: #35363D;
+    margin: 0;
+}
+header, .text-box {
+    background-color: #686868;
+}
+.text-box {
+    box-sizing: border-box;
+}
+#small .img-box {
+    background-color: #324e44;
+    border: 5px solid #ffffff;
+}
+h1, h2, h3, p {
+    color: #ffffff;
+}
+h1, h2, h3 {
+    font-family: retro_computerregular;
+    font-weight: lighter;
+}
+p {
+    font-family: dogica_pixelregular;
+    font-size: small;
+    line-height: .9rem;
+}
+.flex {
+    display: flex;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
+}
+#container {
+    grid-template-areas: 
+        "header header header"
+        "main main main"
+        "footer footer footer";
+}
+header {
+    grid-area: header;
+    grid-template-areas: 
+        "left content right";
+    height: 50px;
+}
+#header-content {
+    grid-area: content;
+    height: 50px;
+    align-items: center;
+}
+#header-content object {
+    width: 50px;
+}
+#header-content p {
+    margin-left: auto;
+    text-align: right;
+}
+main {
+    grid-area: main;
+    grid-template-areas: 
+        "top-left large top-right"
+        "widescreen widescreen widescreen"
+        "bottom-left small bottom-right";
+}
+#large {
+    grid-area: large;
+    margin: 2rem -.5rem;
+    justify-content: center;
+}
+#large .text-box {
+    width: 510px;
+    padding: 1rem 1.5rem;
+    margin: .5rem;
+}
+#large .img-box {
+    height: 510px;
+    background-image: url(../images/oaktree.png);
+    background-size: 430px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#gradient {
+    background-image: linear-gradient(to bottom right, #e8fdf5, #244d3e);
+    background-position: 70% 70%;
+    width: 500px;
+    margin: .5rem;
+    border: 5px solid #ffffff;
+}
+.large-item h2 {
+    margin-top: 0;
+}
+.large-item p {
+    margin-bottom: 0;
+}
+#widescreen {
+    grid-area: widescreen;
+    width: 100%;
+    height: 510px;
+    background-image: url(../images/valley.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+#small {
+    grid-area: small;
+    grid-template-columns: repeat(4, 245px);
+    grid-gap: .8rem 1.2rem;
+    justify-content: center;
+    margin: 2rem 0;
+}
+#small .text-box {
+    width: 245px;
+    height: 245px;
+    padding: 1rem;
+}
+#small .img-box {
+    width: 235px;
+    height: 235px;
+    text-align: center;
+}
+#small #planks {
+    background-image: url(../images/planks.png);
+    background-size: 120px;
+    background-repeat: no-repeat;
+    background-position: 50% 70%;
+}
+#small #sticks {
+    background-image: url(../images/stick.png);
+    background-size: 120px;
+    background-repeat: no-repeat;
+    background-position: 50% 70%;
+}
+#small #chests {
+    background-image: url(../images/chest.png);
+    background-size: 130px;
+    background-repeat: no-repeat;
+    background-position: 50% 70%;
+}
+#small #stairs {
+    background-image: url(../images/stairs.png);
+    background-size: 120px;
+    background-repeat: no-repeat;
+    background-position: 50% 70%;
+}
+.small-item h2 {
+    font-size: 1.2rem;
+    margin-top: 3rem;
+}
+.small-item p {
+    margin-top: 0;
+}
+footer {
+    grid-area: footer;
+    grid-template-areas: 
+        "left content right";
+    background-image: url(../images/trees.jpg);
+    background-size: cover;
+    background-position: 50% bottom;
+    height: 180px;
+    border-top: 5px solid #ffffff;
+}
+#footer-content {
+    grid-area: content;
+    align-items: center;
+}
+#footer-content #right {
+    margin-left: auto;
+}
+
+
