@@ -5,9 +5,18 @@
     z-index: 16;
     background-color: rgb(0, 162, 255);
 }
+.navbar a {
+    font-size: 1.3rem;
+}
 .mr-auto {
     margin-left: auto;
     margin-right: 0!important;
+}
+.nav-link {
+    color: black !important;
+}
+header {
+    height: 85vh;
 }
 html {
     scroll-padding-top: 56px;
@@ -27,44 +36,51 @@ h1, h2, h3, p {
     display: grid;
     width: 80%;
     margin: 2rem auto;
-    column-gap: 1.5rem;
+    grid-template-areas: 
+        "name"
+        "tag-line"
+        "profile"
+        "about";
+    /*column-gap: 1.5rem;
     grid-template-columns: .3fr 1fr;
     grid-template-areas: 
         "profile name"
         "profile tag-line"
-        "profile about";
+        "profile about";*/
 }
 .grid img {
     grid-area: profile;
     width: 100%;
     border-radius: 1.5rem;
+    margin-top: 1rem;
 }
 .grid h1 {
     grid-area: name;
     margin: 0;
+    font-size: 2.3rem;
     align-self: end;
 }
 .grid h2 {
     grid-area: tag-line;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin: 0;
     align-self: start;
     color: rgb(255, 123, 0);
 }
 .grid p {
     grid-area: about;
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin: 1.5rem auto 0;
 }
 #carouselExampleCaptions {
-    width: 50%;
-    margin: 2rem auto;
+    width: 100%;
+    margin: 3rem auto;
 }
 .carousel-inner {
     border-radius: .5rem;
 }
 .d-block {
-    height: 400px;
+    /*height: 20vh;*/
 }
 .flex {
     display: flex;
@@ -74,23 +90,23 @@ h1, h2, h3, p {
     width: 70%;
 }
 .flex img {
-    width: max-content;
+    width: 100%;
 }
 .flex h2 {
     color:  rgb(0, 162, 255);
-    font-size: 3rem;
+    font-size: 2rem;
 }
 .flex h2, .flex p {
     margin: 2rem auto;
 }
 #resume {
-    width: 60%;
+    width: 90%;
     margin: 2rem auto;
     text-align: center;
 }
 #resume h2 {
     color:  rgb(0, 162, 255);
-    font-size: 2.3rem;
+    font-size: 2rem;
 }
 #contact {
     margin: 2rem auto;
@@ -110,4 +126,18 @@ a:hover {
 }
 a:active {
     color:  rgb(0, 162, 255);
+}
+/* MEDIA QUERIES */
+@media (min-width: 570px)
+{
+    .grid img {
+        width: 442px;
+        justify-self: center;
+    }
+    .grid h1, .grid h2 {
+        justify-self: center;
+    }
+    #carouselExampleCaptions {
+        width: 80%;
+    }
 }
