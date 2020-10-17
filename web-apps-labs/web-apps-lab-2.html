@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Web-Apps-Lab-2</title>
+    <style>
+        body {
+            border: 1px solid gray;
+        }
+
+        p b {
+            transform: rotate(20deg)
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Page</h1>
+    <h2>Info</h2>
+    <h2>Pictures</h2>
+    <h2>More Info</h2>
+    <p>Blah <b>Blah</b> Blah</p>
+    <p>Blah <b>Blah</b> Blah</p>
+    <p id="lastParagraph">Blah <b>Blah</b> Blah</p>
+    <footer>Copyright &copy; <b>20XX</b></footer>
+    <script>
+        "use strict";
+
+        // add your own code here.
+        document.querySelector("h1").innerHTML = "My UFO Page";
+        document.querySelector("h2").innerHTML = "My UFO Info";
+        document.querySelector("h2:nth-of-type(2)").innerHTML = "My UFO Pictures";
+        document.querySelector("h2:nth-of-type(3)").innerHTML = "";
+
+        document.body.style.fontFamily = "sans-serif";
+        document.body.style.color = "#b31409";
+
+        let firstPara = document.querySelector("p");
+        firstPara.innerHTML = "Report your UFO sightings here: <a href='http://www.nuforc.org'>http://www.nuforc.org</a>";
+        /* Adding link in innerHTML is much quicker and easier
+        let link = document.createElement("a");
+        link.innerHTML = "http://www.nuforc.org";
+        link.href = "http://www.nuforc.org";
+        firstPara.appendChild(link);
+        */
+        firstPara.style.color = "#396609";
+        firstPara.style.fontWeight = "bold";
+        firstPara.style.fontSize = "2em";
+        firstPara.style.textTransform = "uppercase";
+        firstPara.style.textShadow = "3px 2px #A44";
+
+        document.querySelector("p:nth-of-type(2)").innerHTML = "";
+        document.querySelector("p:nth-of-type(3)").innerHTML = "<img src='https://www.history.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_faces:center%2Cq_auto:good%2Cw_768/MTY0MTk2MzMzNzA2NTUzMTY5/ufo-traits-feature-666735176.jpg' alt='UFO next to airplane'>";
+
+        document.querySelector("footer b").innerHTML = "2020 Nathan Wildofsky";
+    </script>
+</body>
+
+</html>

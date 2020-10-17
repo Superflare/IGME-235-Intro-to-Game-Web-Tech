@@ -5,9 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nathan Wildofsky's Portfolio</title>
+    <!-- Bootsrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <!-- My Stylesheet -->
     <link rel="stylesheet" href="css/stylesheet.css">
+    <!-- Bootstrap Scripts for Navbar and Carousel-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -22,7 +31,9 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="#">Nathan Wildofsky</a>
+            <div id="home" data-toggle="collapse" data-target=".navbar-collapse.show">
+                <a class="navbar-brand" href="#">Nathan Wildofsky</a>
+            </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -30,22 +41,22 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
+                    <li class="nav-item nav-border" data-toggle="collapse" data-target=".navbar-collapse.show">
                         <a class="nav-link" href="#">About Me</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item nav-border" data-toggle="collapse" data-target=".navbar-collapse.show">
                         <a class="nav-link" href="#projects">Projects</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item nav-border" data-toggle="collapse" data-target=".navbar-collapse.show">
                         <a class="nav-link" href="#resume">Resume</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
                         <a class="nav-link" href="#contact">Contact Me</a>
                     </li>
                 </ul>
             </div>
         </nav>
-        <div class="grid">
+        <div class="grid" id="about">
             <img src="media/profile.jpeg" alt="profile picture">
             <h1>Nathan Wildofsky</h1>
             <h2>Game Developer and Designer</h2>
@@ -103,56 +114,99 @@
     </header>
 
     <main>
-        <div class="flex" id="projects">
-            <h2>Placeholder Game</h2>
-            <img src="media/800x500.png" alt="placeholder game">
-            <p>
-                Description of the project, technologies and techniques used, my role in the project, description of the
-                project, technologies and techniques used, my role in the project, description of the project,
-                technologies and techniques used, my role in the project, description of the project, technologies and
-                techniques used, my role in the project, description of the project, technologies and techniques used,
-                my role in the project, description of the project, technologies and techniques used, my role in the
-                project, description of the project, technologies and techniques used, my role in the project.
-            </p>
+        <div id="projects">
+            <div class="flex" id="first-project">
+                <h2>Placeholder Game</h2>
+                <img src="media/800x500.png" alt="placeholder game">
+                <p>
+                    Description of the project, technologies and techniques used, my role in the project, description of
+                    the
+                    project, technologies and techniques used, my role in the project, description of the project,
+                    technologies and techniques used, my role in the project, description of the project, technologies
+                    and
+                    techniques used, my role in the project, description of the project, technologies and techniques
+                    used,
+                    my role in the project, description of the project, technologies and techniques used, my role in the
+                    project, description of the project, technologies and techniques used, my role in the project.
+                </p>
+            </div>
+            <div class="line-gradient"></div>
+            <div class="flex">
+                <h2>Placeholder Game</h2>
+                <img src="media/800x500.png" alt="placeholder game">
+                <p>
+                    Description of the project, technologies and techniques used, my role in the project, description of
+                    the
+                    project, technologies and techniques used, my role in the project, description of the project,
+                    technologies and techniques used, my role in the project, description of the project, technologies
+                    and
+                    techniques used, my role in the project, description of the project, technologies and techniques
+                    used,
+                    my role in the project, description of the project, technologies and techniques used, my role in the
+                    project, description of the project, technologies and techniques used, my role in the project.
+                </p>
+            </div>
+            <div class="line-gradient"></div>
+            <div class="flex">
+                <h2>Placeholder Game</h2>
+                <img src="media/800x500.png" alt="placeholder game">
+                <p>
+                    Description of the project, technologies and techniques used, my role in the project, description of
+                    the
+                    project, technologies and techniques used, my role in the project, description of the project,
+                    technologies and techniques used, my role in the project, description of the project, technologies
+                    and
+                    techniques used, my role in the project, description of the project, technologies and techniques
+                    used,
+                    my role in the project, description of the project, technologies and techniques used, my role in the
+                    project, description of the project, technologies and techniques used, my role in the project.
+                </p>
+            </div>
+            <div class="line-gradient"></div>
         </div>
-        <div class="flex">
-            <h2>Placeholder Game</h2>
-            <img src="media/800x500.png" alt="placeholder game">
-            <p>
-                Description of the project, technologies and techniques used, my role in the project, description of the
-                project, technologies and techniques used, my role in the project, description of the project,
-                technologies and techniques used, my role in the project, description of the project, technologies and
-                techniques used, my role in the project, description of the project, technologies and techniques used,
-                my role in the project, description of the project, technologies and techniques used, my role in the
-                project, description of the project, technologies and techniques used, my role in the project.
-            </p>
-        </div>
-        <div class="flex">
-            <h2>Placeholder Game</h2>
-            <img src="media/800x500.png" alt="placeholder game">
-            <p>
-                Description of the project, technologies and techniques used, my role in the project, description of the
-                project, technologies and techniques used, my role in the project, description of the project,
-                technologies and techniques used, my role in the project, description of the project, technologies and
-                techniques used, my role in the project, description of the project, technologies and techniques used,
-                my role in the project, description of the project, technologies and techniques used, my role in the
-                project, description of the project, technologies and techniques used, my role in the project.
-            </p>
-        </div>
-
         <div id="resume">
-            <h2>Resume</h2>
-            <iframe src="media/NWildofsky_Resume.pdf#toolbar=0" width="100%" height="500px"></iframe>
-            <a href="media/NWildofsky_Resume.pdf">View Full Resume</a>
+            <div id="resume-content">
+                <h2>Resume</h2>
+                <iframe src="media/NWildofsky_Resume.pdf#toolbar=0"></iframe>
+                <a href="media/NWildofsky_Resume.pdf" class="button">View Full Resume</a>
+            </div>
         </div>
     </main>
 
     <footer>
         <div id="contact">
             <h2>Contact Me!</h2>
-            <p>E-Mail: <a href="mailto:nsw7227@rit.edu">nsw7227@rit.edu</a></p>
-            <p>Phone: 937-925-2140</p>
-            <p>Documentation PDF: <a href="media/Portfolio_Documentation.pdf">Click Here</a></p>
+            <div id="contact-wrapper">
+                <div id="contact-info">
+                    <!--<p>E-Mail: <a href="mailto:nsw7227@rit.edu">nsw7227@rit.edu</a></p>
+                    <p>Phone: 937-925-2140</p>
+                    <p>Documentation PDF: <a href="media/Portfolio_Documentation.pdf">Click Here</a></p>-->
+                    <a href="mailto:nsw7227@rit.edu" class="icon">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nwildofsky/" class="icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/Superflare" class="icon">
+                        <i class="fab fa-github-square"></i>
+                    </a>
+                    <p>Phone: 937-925-2140</p>
+                    <a href="documentation.html" class="button">View Documentation</a>
+                </div>
+                <div id="form">
+                    <form
+                        action="https://docs.google.com/forms/u/2/d/e/1FAIpQLSc3q5mThzK3OKhMMbQpZ6J9xwnAq2IvWFdXDhVAUHu-SCwh8g/formResponse">
+                        <label for="email">Email Address</label><br>
+                        <input type="text" id="email" name="emailAddress" required placeholder="Your email"><br>
+                        <label for="name">Name</label><br>
+                        <input type="text" id="name" name="entry.2005620554" required placeholder="Your name"><br>
+                        <label for="message">Message</label><br>
+                        <textarea id="message" name="entry.839337160" required
+                            placeholder="Your message"></textarea><br>
+                        <button type="submit" class="button">Submit</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </footer>
 </body>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Web-Apps-Lab-3</title>
+	<style>
+		body{border:1px solid gray;}
+	</style>
+</head>
+<body>
+<h1>My Favorites</h1>
+<h2>My Favorite Colors</h2>
+
+<ol id="colorsList">
+	
+</ol>
+
+<h2>My Favorite Foods</h2>
+
+<ol id="foodsList">
+	
+</ol>
+
+<h2>My Favorite Links</h2>
+
+<ol id="linksList">
+	
+</ol>
+
+<script>
+"use strict";
+let colors = ["orange", "blue", "black", "yellow", "green"];
+for (let i = 0; i < colors.length; i ++)
+{
+    let listITem = document.createElement("li");
+    listITem.innerHTML = colors[i];
+    document.querySelector("#colorsList").appendChild(listITem);
+}
+let foods = ["tacos", "lasagna", "pizza", "chicken"]; // add some foods
+for (let element of foods)
+{
+    let listITem = document.createElement("li");
+    listITem.innerHTML = element;
+    document.querySelector("#foodsList").appendChild(listITem);
+}
+
+// Optional - can you figure out how to pull both the key AND the value
+// from the `links` object literal?
+let links = {
+		"YouTube": "http://www.youtube.com",
+		"Crunchyroll" : "https://www.crunchyroll.com/",
+		"Steam" : "https://store.steampowered.com/"
+	}
+for (let key in links)
+{
+    let listITem = document.createElement("li");
+    listITem.innerHTML = `<a href='${links[key]}'>${key}</a>`;
+    document.querySelector("#linksList").appendChild(listITem);
+}
+
+</script>
+</body>
+</html>
