@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Web-Apps-Lab-4</title>
+	<style>
+		body{border:1px solid gray;}
+	</style>
+</head>
+<body>
+<h1>My Favorites</h1>
+<h2>My Favorite Colors</h2>
+
+<ol id="colorsList">
+	
+</ol>
+
+<h2>My Favorite Foods</h2>
+
+<ol id="foodsList">
+	
+</ol>
+
+<h2>My Favorite Links</h2>
+
+<ol id="linksList">
+	
+</ol>
+
+<script>
+"use strict";
+let colors = ["orange", "blue", "black", "yellow", "green"];
+let colorsList = document.querySelector("#colorsList");
+createList(colorsList, colors);
+
+let foods = ["tacos", "lasagna", "pizza", "chicken"]; // add some foods
+let foodsList = document.querySelector("#foodsList");
+createList(foodsList, foods);
+
+// Optional - can you figure out how to pull both the key AND the value
+// from the `links` object literal?
+let links = {
+		"YouTube": "http://www.youtube.com",
+		"Crunchyroll" : "https://www.crunchyroll.com/",
+		"Steam" : "https://store.steampowered.com/"
+	}
+for (let key in links)
+{
+    let listITem = document.createElement("li");
+    listITem.innerHTML = `<a href='${links[key]}'>${key}</a>`;
+    document.querySelector("#linksList").appendChild(listITem);
+}
+
+function createList(listElement, array = ["puppydogs", "butterflies", "lollipops"])
+{
+    array.forEach(element => {
+        let listItem = document.createElement("li");
+        listItem.innerHTML = element;
+        listElement.appendChild(listItem);
+        })
+}
+
+</script>
+</body>
+</html>
