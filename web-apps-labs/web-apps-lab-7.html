@@ -39,7 +39,7 @@
             monsters.push(monster);
             monster = makeGoomba("Alice", 40, 150, 200);
             monsters.push(monster);
-            monster = makeBoo("Roarsh", 30, 50, 190);
+            monster = makeBoo("Rarsh", 30, 50, 190);
             monsters.push(monster);
             monster = makeBoo("Drewt", 70, 20, 150);
             monsters.push(monster);
@@ -58,7 +58,7 @@
                 let liStr = "";
                 let li = document.createElement("li");
 
-                if (monsters[i][type] == type) {
+                if (monsters[i]["type"] == type) {
                     for (let key in monsters[i]) {
                         if (typeof monsters[i][key] !== "function") {
                             liStr += `<b>${key}:</b> ${monsters[i][key]}<br />`;
