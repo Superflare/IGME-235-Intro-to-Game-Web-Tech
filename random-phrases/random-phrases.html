@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mass Effect Sovereign Quotes</title>
+    <link href="styles/stylesheet.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>How Does Sovereign Feel About Humanity?</h1>
+    </header>
+
+    <main>
+        <div class="flex" id="container">
+            <div id="image">
+                <img src="images/sovereign.jpg" alt="The Reaper Sovereign">
+            </div>
+            <div class="flex" id="quote">
+                <p id="random"></p>
+                <p id="name">&mdash; Sovereign</p>
+            </div>
+        </div>
+        <div class="flex" id="button">
+            <button>New Phrase</button>
+        </div>
+    </main>
+
+    <footer>
+        <h2>&copy; Nathan Wildofsky</h2>
+    </footer>
+
+    <script>
+        let quotes = [
+            "Rudimentary creatures of blood and flesh. You touch my mind, fumbling in ignorance, incapable of understanding",
+            "There is a realm of existence so far beyond your own you cannot even imagine it. I am beyond your comprehension. I am Sovereign!",
+            "You exist because we allow it. And you will end because we demand it",
+            "We have no beginning. We have no end. We are infinite. Millions of years after your civilization has been eradicated and forgotten, we will endure",
+            "Organic life is nothing but a genetic mutation, an accident. Your lives are measured in years and decades. You wither and die. We are eternal",
+            "Organic civilizations rise, evolve, advance. And at the apex of their glory, they are extinguished"
+        ]
+        let randomQuote = document.querySelector("#random");
+        let button = document.querySelector("button");
+        let currentIndex = 0;
+        let nextIndex = 0;
+
+        function displayQuote() {
+            // When using the button to generate a new phrase, don't let the user get the same phrase again
+            while (nextIndex == currentIndex) {
+                nextIndex = Math.floor(Math.random() * quotes.length);
+            }
+
+            randomQuote.innerHTML = quotes[nextIndex];
+            currentIndex = nextIndex;
+        }
+
+        window.onload = displayQuote;
+
+        button.onclick = displayQuote;
+    </script>
+</body>
+
+</html>

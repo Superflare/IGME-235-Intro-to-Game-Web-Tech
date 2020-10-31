@@ -1,0 +1,116 @@
+@font-face {
+    font-family: 'mass_effect_123regular';
+    src: url('../fonts/me123-webfont.woff2') format('woff2'),
+         url('../fonts/me123-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-image: url(../images/planet.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'mass_effect_123regular';
+}
+
+#image {
+    flex: 0 1 300px;
+}
+img {
+    width: 182px;
+    border-radius: .4rem;
+}
+
+h1 {
+    color: rgb(216, 216, 216);
+    text-align: left;
+    font-size: 1.6rem;
+    margin-left: 1rem;
+}
+
+.flex {
+    display: flex;
+}
+#container {
+    flex-flow: column nowrap;
+    margin: 6rem auto;
+    width: 95%;
+    height: 415px;
+}
+
+#quote {
+    flex: 0 1 700px;
+    flex-flow: column nowrap;
+    padding-left: 4rem;
+    padding-right: 1rem;
+    color: rgb(187, 54, 54);
+    font-size: 1rem;
+}
+#name {
+    text-align: right;
+}
+
+#button {
+    justify-content: center;
+}
+button {
+    color: rgb(216, 216, 216);
+    background-color: rgb(187, 54, 54);
+    outline: none;
+    border: none;
+    border-radius: .2rem;
+    font-family: 'mass_effect_123regular';
+    font-size: 1.2rem;
+    padding: .5rem 1rem;
+    transition: background-color .4s;
+}
+button:hover {
+    background-color: rgb(24, 24, 24);
+}
+button:active {
+    border: 3px solid rgb(187, 54, 54);
+}
+
+footer h2 {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    margin: 0;
+    color: rgb(216, 216, 216);
+    font-size: .8rem;
+}
+
+@media (min-width: 450px)
+{
+    #container {
+        flex-flow: row nowrap;
+        width: 100%;
+        height: fit-content;
+    }
+}
+
+@media (min-width: 700px)
+{
+    #container {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1000px)
+{
+    img {
+        width: 100%;
+    }
+    h1 {
+        font-size: 2.3rem;
+    }
+    #quote {
+        font-size: 1.4rem;
+        align-self: center;
+    }
+    footer h2 {
+        font-size: 1.2rem;
+    }
+}
