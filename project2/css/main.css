@@ -1,0 +1,392 @@
+/* General properties */
+html, input, button, select {
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    overflow-y: scroll;
+    background-color: rgb(24, 24, 24);
+    color: white;
+}
+
+/* Site layout */
+main {
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    grid-template-columns: 350px 1fr;
+    grid-template-areas: 
+    "search debug"
+    "search results";
+    column-gap: 2rem;
+    padding-top: 70px;
+}
+
+/* Header properties */
+#header-content {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    background-color: rgb(206, 47, 20);
+    z-index: 100;
+    box-shadow: 0px 6px 14px 1px black;
+}
+#header-content h1 {
+    margin-left: 1rem;
+}
+#title {
+    width: 400px;
+    margin-left: 2rem;
+}
+#logo {
+    display: none;
+}
+#header-search, #header-search-button {
+    margin: 0;
+    height: 30px;
+    box-sizing: border-box;
+    margin: auto 0;
+}
+#header-search {
+    flex: 1 1 0;
+    margin-left: 3rem;
+    height: 40px;
+    font-size: 1.2rem;
+    border-radius: .1rem;
+    padding-left: .8rem;
+    border: 2px solid rgba(255, 255, 255, 0);
+    background-color:  rgb(235, 110, 88);
+}
+#header-search::placeholder {
+    color: white;
+    opacity: .7;
+}
+#header-search:hover {
+    border: 2px solid white;
+}
+#header-search:focus, #header-search:active {
+    background-color: white;
+}
+#header-search-button {
+    margin-left: .5rem;
+    margin-right: .8rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgb(235, 110, 88);
+    color: rgba(255, 255, 255, .7);
+    transition: all .15s;
+    outline: none;
+}
+#header-search-button:hover {
+    background-color: white;
+    color: black;
+}
+#header-search-button:active {
+    color: rgb(206, 47, 20);
+}
+.button-header {
+    height: 60px;
+    width: 140px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: white;
+    background-color: rgb(206, 47, 20);
+    border: none;
+}
+.button-header:focus, .button-header:hover {
+    background-color: white;
+    color: black;
+}
+.button-header:active {
+    color:  rgb(206, 47, 20);
+}
+.disabled-header, .disabled-header:focus, .disabled-header:hover, .disabled-header:active {
+    opacity: .6;
+    background-color: rgb(133, 48, 33);
+    color: white;
+}
+
+/* Main search properties */
+#search-wrapper {
+    display: flex;
+    position: fixed;
+    flex-flow: column nowrap;
+    padding: 0 0 0 3rem;
+    grid-area: search;
+    width: 350px;
+    box-sizing: border-box;
+}
+#search-wrapper p {
+    margin: .5rem 0;
+}
+#search-wrapper input:focus {
+    outline: 1px solid rgb(206, 47, 20);
+}
+#search-boxes {
+    margin-bottom: 1rem;
+}
+#search-boxes .label {
+    margin: 1.3rem 0 .5rem;
+}
+#search-boxes input {
+    width: 100%;
+}
+.ranged-input {
+    margin-top: .7rem;
+    display: flex;
+}
+.ranged-input p {
+    margin: 0 !important;
+}
+.ranged-input input {
+    flex: 0 1 90px;
+}
+.range-controls {
+    margin: 0 1rem 0 auto;
+}
+/* Main search buttons properties */
+#main-search-buttons {
+    display: grid;
+    grid-template-columns: .5fr .1fr;
+    column-gap: 15px;
+    margin-top: 2rem;
+}
+.button {
+    padding: .25rem 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: .4rem;
+    color: rgb(206, 47, 20);
+    background-color: rgb(240, 240, 240);
+    border: none;
+    transition: all .15s;
+}
+.button:hover {
+    background-color: rgb(206, 47, 20);
+    color: rgb(240, 240, 240);
+}
+.button:active {
+    color: rgb(255, 211, 12);
+}
+
+
+/* Make the radio buttons only display their icon */
+[type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+[type=radio] + i {
+    cursor: pointer;
+    color: rgb(206, 47, 20);
+}
+
+[type=radio]:checked + i {
+    color: rgb(255, 211, 12);
+}
+
+/* Filter slider properties */
+#advanced {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 100%;
+    padding: 0 1rem;
+    background-color: rgb(240, 240, 240);
+    padding-top: 50px;
+    z-index: 2;
+    color: black;
+}
+#advanced h1 {
+    font-weight: 700;
+    margin-bottom: 0;
+}
+#advanced h2 {
+    font-weight: 600;
+    margin: 1rem 0 .3rem 0;
+    color: rgb(206, 47, 20);
+}
+#advanced p {
+    font-weight: 400;
+    margin: 0 0 .3rem;
+}
+.supertype + label {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+#card-type {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "pokemon trainer energy";
+}
+#pokemon-subtypes {
+    display: grid;
+    grid-template-columns: .1fr 1fr;
+}
+#trainer-subtypes {
+    display: grid;
+    grid-template-columns: .1fr 1fr;
+}
+#energy-subtypes {
+    display: grid;
+    grid-template-columns: .1fr 1fr;
+}
+#card-energy-types {
+    display: none;
+    grid-template-columns: .1fr 1fr .1fr 1fr .1fr 1fr;
+}
+#card-rarity {
+    display: grid;
+    grid-template-columns: .1fr 1fr .1fr 1fr .1fr 1fr;
+}
+#close {
+    position: absolute;
+    top: 70px;
+    right: 15px;
+    font-size: 2rem;
+    transition: all .15s;
+}
+#close:hover {
+    color: rgb(206, 47, 20);
+}
+
+/* Status messages and result modifier properties */
+#debug {
+    grid-area: debug;
+    width: 90%;
+    position: relative;
+}
+#limit {
+    margin-right: .5rem;
+}
+
+
+/* Results properties */
+#content {
+    grid-area: results;
+    display: grid;
+    width: 90%;
+    grid-template-columns: repeat(auto-fit, minmax(180px, .3fr));
+    justify-content: start;
+    gap: 15px;
+    padding-top: 3rem;
+    margin-top: 2rem;
+    border-top: 2px solid rgb(255, 211, 12);
+}
+.result img {
+    width: 100%;
+    transition: all .3s;
+}
+.result:hover {
+    z-index: 10;
+}
+.result:hover img {
+    transform: scale(1.2, 1.2);
+}
+
+/* Media queries for responsive website design */
+@media (min-width: 1200px)
+{
+    main {
+        grid-template-rows: 85px 1fr;
+    }
+    #result-options {
+        position: absolute;
+        bottom: 9px;
+        right: 5px;
+    }
+}
+@media (max-width: 950px)
+{
+    #title {
+        display: none;
+    }
+    #logo {
+        display: block;
+        width: 45px;
+        margin-left: 2rem;
+    }
+    #header-content {
+        height: 45px;
+    }
+    #header-search {
+        margin-left: 1rem;
+        height: 30px;
+        font-size: .8rem;
+        padding: .1rem;
+    }
+    #header-search-button {
+        width: 30px;
+        height: 30px;
+    }
+    .button-header {
+        width: 80px;
+        height: 45px;
+        font-size: .7rem;
+    }
+}
+@media (max-width: 826px)
+{
+    main {
+        grid-template-areas: 
+        "search"
+        "debug"
+        "results";
+        grid-template-columns: 1fr;
+        grid-template-rows: 400px 120px 1fr;
+    }
+    #search-wrapper {
+        padding: 0;
+        position: static;
+        justify-self: center;
+    }
+    #debug {
+        padding-left: 5vw;
+    }
+    #content {
+        justify-self: center;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+    #logo {
+        margin-left: 1rem;
+    }
+}
+@media (max-width: 448px)
+{
+    #advanced {
+        width: 100%;
+    }
+    #advanced h1 {
+        font-size: 7vw;
+    }
+    #advanced h2 {
+        font-size: 5vw;
+    }
+    #advanced p {
+        font-size: 4vw;
+    }
+    #advanced input, #advanced label {
+        font-size: 4.2vw;
+    }
+    .supertype + label {
+        font-size: 4.9vw !important;
+    }
+    #close {
+        right: 45px;
+    }
+}
+@media (max-width: 405px)
+{
+    #search-wrapper {
+        width: 90%;
+    }
+}

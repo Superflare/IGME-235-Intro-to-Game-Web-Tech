@@ -42,7 +42,6 @@ function searchButtonClicked(){
 
     // 10 - update the UI
     document.querySelector("#status").innerHTML = "<b>Searching for '" + displayTerm + "'</b>";
-
     // 11 - see what the URL looks like
     console.log(url);
 
@@ -89,7 +88,7 @@ function dataLoaded(e)
     // 9 - Start building an HTML string we will display to the user
     let results = obj.data;
     console.log("results.length = " + results.length);
-    let bigString = "<p><i>Here are " + results.length + " results for '" + displayTerm + "'</i></p>";
+    let bigString = "";
 
     // 10 - loop through the array of results
     for (let i = 0; i < results.length; i++)
@@ -97,7 +96,7 @@ function dataLoaded(e)
         let result = results[i];
 
         // 11 - get the URL to the GIF
-        let smallURL = result.images.fixed_width_downsampled.url;
+        let smallURL = result.images.fixed_width.url;
         if(!smallURL) smallURL = "images/no-image-found.png";
 
         // 12 - get the URL to the GIPHY Page
@@ -119,7 +118,7 @@ function dataLoaded(e)
     document.querySelector("#content").innerHTML = bigString;
 
     // 17 - update the status
-    document.querySelector("#status").innerHTML = "<b>Success!</b>";
+    document.querySelector("#status").innerHTML = "<b>Success!</b><p><i>Here are " + results.length + " results for '" + displayTerm + "'</i></p>";
 }
 
 function dataError(e)

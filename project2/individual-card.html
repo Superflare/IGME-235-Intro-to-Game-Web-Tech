@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon TCG Finder</title>
+    <!-- Add Google fonts to the project-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!--Add FontAwesome to the project-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/individual-card.css">
+    <!--Add jQuery into the project-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/individual-card.js"></script>
+</head>
+
+<body>
+    <header>
+        <div id="header-content">
+            <!--<h1>Pokemon Card Database</h1>-->
+            <img src="images/Pokemon-Card-Database.png" alt="Pokemon Card Database" id="title">
+            <img src="images/logo.png" alt="Pokemon Card Finder Logo" id="logo">
+            <input type="text" id="header-search" name="header-search" placeholder="Search by card name">
+            <button type="button" id="header-search-button"><i class="fas fa-search"></i></button>
+            <button class="button-header" id="to-advanced"><i class="fas fa-list"></i> Advanced</button>
+        </div>
+    </header>
+
+    <main>
+        <div id="image"></div>
+
+        <div id="details">
+            <div id="name"></div>
+            <div id="stats"></div>
+            <div id="text">
+                <div id="ability"></div>
+                <div id="special-rules"></div>
+                <div id="attacks"></div>
+            </div>
+            <div id="misc">
+                <div id="weaknesses"></div>
+                <div id="resistances"></div>
+                <div id="retreat"></div>
+                <div id="card-specific"></div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon TCG Finder</title>
+    <!-- Add Google fonts to the project-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!--Add FontAwesome to the project-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--Add jQuery into the project-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <header>
+        <div id="header-content">
+            <!--<h1>Pokemon Card Database</h1>-->
+            <img src="images/Pokemon-Card-Database.png" alt="Pokemon Card Database" id="title">
+            <img src="images/logo.png" alt="Pokemon Card Finder Logo" id="logo">
+            <input type="text" id="header-search" name="header-search" placeholder="Search by card name">
+            <button type="button" id="header-search-button"><i class="fas fa-search"></i></button>
+            <button class="button-header disabled-header" disabled><i class="fas fa-list"></i> Advanced</button>
+        </div>
+    </header>
+
+    <main>
+        <div id="search-wrapper">
+            <div id="search-boxes">
+                <p class="label"><label for="main-search">Search by card name:</label></p>
+                <p><input type="text" id="main-search" name="main-search" placeholder="e.g. Rayquaza"></p>
+
+                <p class="label"><label for="desc-search">Search by card text:</label></p>
+                <p><input type="text" id="desc-search" name="desc-search" placeholder="e.g. Flip a coin"></p>
+            </div>
+
+            <div id="search-ranges">
+                <div class="ranged-input">
+                    <p>Health</p>
+                    <div class="range-controls">
+                        <label>
+                            <input type="radio" class="hp-radio" name="hp-radio" value="less-than">
+                            <i class="fas fa-less-than-equal"></i>
+                        </label>
+                        <label>
+                            <input type="radio" class="hp-radio" name="hp-radio" value="equal" checked>
+                            <i class="fas fa-equals"></i>
+                        </label>
+                        <label>
+                            <input type="radio" class="hp-radio" name="hp-radio" value="greater-than">
+                            <i class="fas fa-greater-than-equal"></i>
+                        </label>
+                    </div>
+                    <input type="number" class="hp" min="0" max="340" onkeyup=enforceMinMax(this) placeholder="0-340">
+                </div>
+
+                <div class="ranged-input">
+                    <p>Attack Dmg</p>
+                    <div class="range-controls">
+                        <label>
+                            <input type="radio" class="atkdmg-radio" name="atkdmg-radio" value="less-than">
+                            <i class="fas fa-less-than-equal"></i>
+                        </label>
+                        <label>
+                            <input type="radio" class="atkdmg-radio" name="atkdmg-radio" value="equal" checked>
+                            <i class="fas fa-equals"></i>
+                        </label>
+                        <label>
+                            <input type="radio" class="atkdmg-radio" name="atkdmg-radio" value="greater-than">
+                            <i class="fas fa-greater-than-equal"></i>
+                        </label>
+                    </div>
+                    <input type="number" class="atkdmg" min="0" max="300" onkeyup=enforceMinMax(this)
+                        placeholder="0-300">
+                </div>
+
+                <div class="ranged-input">
+                    <p>Attack Cost</p>
+                    <div class="range-controls">
+                        <label>
+                            <input type="radio" class="atkcost-radio" name="atkcost-radio" value="less-than">
+                            <i class="fas fa-less-than-equal"></i>
+                        </label>
+                        <label>
+                            <input type="radio" class="atkcost-radio" name="atkcost-radio" value="equal" checked>
+                            <i class="fas fa-equals"></i>
+                        </label>
+                        <label>
+                            <input type="radio" class="atkcost-radio" name="atkcost-radio" value="greater-than">
+                            <i class="fas fa-greater-than-equal"></i>
+                        </label>
+                    </div>
+                    <input type="number" class="atkcost" min="0" max="5" onkeyup=enforceMinMax(this) placeholder="0-5">
+                </div>
+
+                <div class="ranged-input">
+                    <p>Retreat Cost</p>
+                    <div class="range-controls">
+                        <label>
+                            <input type="radio" class="retrcost-radio" name="retrcost-radio" value="less-than">
+                            <i class="fas fa-less-than-equal"></i>
+                        </label>
+                        <label>
+                            <input type="radio" class="retrcost-radio" name="retrcost-radio" value="equal" checked>
+                            <i class="fas fa-equals"></i>
+                        </label>
+                        <label>
+                            <input type="radio" class="retrcost-radio" name="retrcost-radio" value="greater-than">
+                            <i class="fas fa-greater-than-equal"></i>
+                        </label>
+                    </div>
+                    <input type="number" class="retrcost" min="0" max="5" onkeyup=enforceMinMax(this) placeholder="0-5">
+                </div>
+            </div>
+
+            <div id="main-search-buttons">
+                <button type="button" id="main-search-button" class="button">Search</button>
+                <button type="button" id="filter-toggle" class="button"><i class="fas fa-filter"></i></button>
+            </div>
+        </div>
+
+        <div id="advanced">
+            <h1>Filter by</h1>
+            <h2>Card Type</h2>
+            <div id="card-type">
+                <div id="pokemon-types">
+                    <input type="checkbox" class="supertype" id="pokemon" value="Pokémon">
+                    <label for="pokemon">Pokémon</label>
+
+                    <div id="pokemon-subtypes">
+                        <input type="checkbox" class="subtype" id="basicPkm" value="Basic">
+                        <label for="basicPkm">Basic</label>
+                        <input type="checkbox" class="subtype" id="stage1" value="Stage 1">
+                        <label for="stage1">Stage 1</label>
+                        <input type="checkbox" class="subtype" id="stage2" value="Stage 2">
+                        <label for="stage2">Stage 2</label>
+                        <input type="checkbox" class="subtype" id="lvlUp" value="Level Up">
+                        <label for="lvlUp">Level Up</label>
+                        <input type="checkbox" class="subtype" id="restored" value="Restored">
+                        <label for="restored">Restored</label>
+                        <input type="checkbox" class="subtype" id="ex" value="EX">
+                        <label for="ex">EX</label>
+                        <input type="checkbox" class="subtype" id="mega" value="MEGA">
+                        <label for="mega">MEGA</label>
+                        <input type="checkbox" class="subtype" id="gx" value="GX">
+                        <label for="gx">GX</label>
+                        <input type="checkbox" class="subtype" id="break" value="BREAK">
+                        <label for="break">BREAK</label>
+                        <input type="checkbox" class="subtype" id="legend-type" value="LEGEND">
+                        <label for="legend-type">LEGEND</label>
+                    </div>
+                </div>
+
+                <div id="trainer-types">
+                    <input type="checkbox" class="supertype" id="trainer" value="Trainer">
+                    <label for="trainer">Trainer</label>
+
+                    <div id="trainer-subtypes">
+                        <input type="checkbox" class="subtype" id="item" value="ITEM">
+                        <label for="item">Item</label>
+                        <input type="checkbox" class="subtype" id="pkmTool" value="Pokémon Tool">
+                        <label for="pkmTool">Pokémon Tool</label>
+                        <input type="checkbox" class="subtype" id="stadium" value="Stadium">
+                        <label for="stadium">Stadium</label>
+                        <input type="checkbox" class="subtype" id="supporter" value="Supporter">
+                        <label for="supporter">Supporter</label>
+                        <input type="checkbox" class="subtype" id="tm" value="Technical Machine">
+                        <label for="tm">Technical Machine</label>
+                        <input type="checkbox" class="subtype" id="rks" value="Rocket's Secret Machine">
+                        <label for="rks">Rocket's Secret Machine</label>
+                    </div>
+                </div>
+
+                <div id="energy-types">
+                    <input type="checkbox" class="supertype" id="energy" value="Energy">
+                    <label for="energy">Energy</label>
+
+                    <div id="energy-subtypes">
+                        <input type="checkbox" class="subtype" id="basicEng" value="Basic">
+                        <label for="basicEng">Basic</label>
+                        <input type="checkbox" class="subtype" id="special" value="Special">
+                        <label for="special">Special</label>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Energy Type</h2>
+            <p>(Must be a Pokémon first)</p>
+            <div id="card-energy-types">
+                <input type="checkbox" class="types" id="colorless" value="Colorless">
+                <label for="colorless">Colorless</label>
+                <input type="checkbox" class="types" id="darkness" value="Darkness">
+                <label for="darkness">Darkness</label>
+                <input type="checkbox" class="types" id="dragon" value="Dragon">
+                <label for="dragon">Dragon</label>
+                <input type="checkbox" class="types" id="fairy" value="Fairy">
+                <label for="fairy">Fairy</label>
+                <input type="checkbox" class="types" id="fighting" value="Fighting">
+                <label for="fighting">Fighting</label>
+                <input type="checkbox" class="types" id="fire" value="Fire">
+                <label for="fire">Fire</label>
+                <input type="checkbox" class="types" id="grass" value="Grass">
+                <label for="grass">Grass</label>
+                <input type="checkbox" class="types" id="lightning" value="Lightning">
+                <label for="lightning">Lightning</label>
+                <input type="checkbox" class="types" id="metal" value="Metal">
+                <label for="metal">Metal</label>
+                <input type="checkbox" class="types" id="psychic" value="Psychic">
+                <label for="psychic">Psychic</label>
+                <input type="checkbox" class="types" id="water" value="Water">
+                <label for="water">Water</label>
+            </div>
+
+            <h2>Rarity</h2>
+            <div id="card-rarity">
+                <input type="checkbox" class="rarity" id="common" value="Common">
+                <label for="common">Common</label>
+                <input type="checkbox" class="rarity" id="uncommon" value="Uncommon">
+                <label for="uncommon">Uncommon</label>
+                <input type="checkbox" class="rarity" id="rare" value="Rare">
+                <label for="rare">Rare</label>
+                <input type="checkbox" class="rarity" id="rare-holo" value="Rare Holo">
+                <label for="rare-holo">Rare Holo</label>
+                <input type="checkbox" class="rarity" id="rare-holo-ex" value="Rare Holo EX">
+                <label for="rare-holo-ex">Rare Holo EX</label>
+                <input type="checkbox" class="rarity" id="rare-holo-gx" value="Rare Holo GX">
+                <label for="rare-holo-gx">Rare Holo GX</label>
+                <input type="checkbox" class="rarity" id="rare-holo-lvlx" value="Rare Holo Lv.X">
+                <label for="rare-holo-lvlx">Rare Holo Lv.X</label>
+                <input type="checkbox" class="rarity" id="rare-prime" value="Rare Prime">
+                <label for="rare-prime">Rare Prime</label>
+                <input type="checkbox" class="rarity" id="rare-ultra" value="Rare Ultra">
+                <label for="rare-ultra">Rare Ultra</label>
+                <input type="checkbox" class="rarity" id="rare-ace" value="Rare ACE">
+                <label for="rare-ace">Rare ACE</label>
+                <input type="checkbox" class="rarity" id="rare-break" value="Rare BREAK">
+                <label for="rare-break">Rare BREAK</label>
+                <input type="checkbox" class="rarity" id="rare-rainbow" value="Rare Rainbow">
+                <label for="rare-rainbow">Rare Rainbow</label>
+                <input type="checkbox" class="rarity" id="legend-rarity" value="LEGEND">
+                <label for="legend-rarity">LEGEND</label>
+            </div>
+
+            <i id="close" class="fas fa-times"></i>
+        </div>
+
+        <div id="debug">
+            <div id="status">
+                <p id="loading">Ready to search</p>
+                <p id="success"></p>
+            </div>
+            <div id="result-options">
+                <label for="limit">Search limit </label>
+                <select name="limit" id="limit">
+                    <option value="1">1</option>
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50" selected>50</option>
+                    <option value="100">100</option>
+                </select>
+
+                <label for="sorting">Sort by </label>
+                <select name="sorting" id="sorting">
+                    <option value="numberAsc">Card Number (Low-High)</option>
+                    <option value="numberDec">Card Number (High-Low)</option>
+                    <option value="nameAsc">Card Name (A-Z)</option>
+                    <option value="nameDec">Card Name (Z-A)</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="content"></div>
+    </main>
+</body>
+
+</html>

@@ -17,7 +17,6 @@
  
  #status{
      font-style: italic;
-     height:32px;
  }
 
  #content {
@@ -25,7 +24,7 @@
      width: 90%;
      display: grid;
      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-     gap: 10px;
+     gap: 60px 20px;
  }
 
  .result {
@@ -35,6 +34,7 @@
 
  .result img {
      width: 100%;
+     box-shadow: 8px 10px 23px -6px rgba(0,0,0,.75);
  }
 
  .result span {
@@ -91,7 +91,7 @@ button{
 button.green{
     border-color: #8fc800;
       background: #8fc800;
-      background: linear-gradient(top, #8fc800 0%,#438c00 100%);
+      background: linear-gradient(to top, #8fc800 0%,#438c00 100%);
 }
 
 button:hover{
