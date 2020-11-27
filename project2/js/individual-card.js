@@ -146,14 +146,14 @@ function headerSearch()
     if (query)
     {
         term += query;
-        window.location.href = "index.html" + term;
+        window.location.href = "https://people.rit.edu/nsw7227/235/project2/index.html" + term;
     }
 }
 
 // Allow the advanced button to reroute back to the main page
 function advancedSearch()
 {
-    window.location.href = "index.html?advanced";
+    window.location.href = "https://people.rit.edu/nsw7227/235/project2/index.html?advanced";
 }
 
 // Display an image of an energy type base on a string of the same name

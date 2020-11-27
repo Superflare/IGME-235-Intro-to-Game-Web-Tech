@@ -385,7 +385,7 @@ function jsonLoaded(obj)
         for (let card of allReturnedCards)
         {
             let image = card.imageUrl;
-            let entry = `<div class="result"><a href="individual-card.html?id=${card.id}"><img src="${image}" title="${card.id}"></a></div>`;
+            let entry = `<div class="result"><a href="https://people.rit.edu/nsw7227/235/project2/individual-card.html?id=${card.id}"><img src="${image}" title="${card.id}"></a></div>`;
             dataString += entry;
         }
     
@@ -700,7 +700,7 @@ function outsideSearch()
 
         $("#header-search")[0].value = parsedTerm;
         getData(false);
-        window.history.replaceState({}, document.title, "/index.html");
+        window.history.replaceState({}, document.title, "https://people.rit.edu/nsw7227/235/project2/index.html");
     }
 }
 
@@ -717,7 +717,7 @@ function toAdvancedSearch()
         if (parsedTerm == "advanced")
         {
             getData(true);
-            window.history.replaceState({}, document.title, "/index.html");
+            window.history.replaceState({}, document.title, "https://people.rit.edu/nsw7227/235/project2/index.html");
         }
     }
 }
